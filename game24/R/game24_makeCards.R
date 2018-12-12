@@ -94,7 +94,7 @@ game24_makeCards=function(b=24){
       }
 
       if(length(result1) == 0){
-        print("You cannot make 24 with these cards.")
+        return(print("You cannot make 24 with these cards."))
       }
 
       for(q in 1:(length(result1)-1)){
