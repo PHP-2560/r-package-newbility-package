@@ -59,18 +59,21 @@ game24_makeCards=function(b=24){
   B=permn(A)
   flag = 0
   while(flag == 0){
+    # Run 24 solver logic when user desires solutions
     input <- readline(prompt = "Enter your 24 when you want solutions: ")
     if(as.numeric(input) == 24){
 
       stopifnot(len==4)
       stopifnot(A[1]%%1==0 & A[2]%%1==0 & A[3]%%1==0 & A[4]%%1==0)
       method=vector(mode="character",length=0)
+      # Initializing required vectors
       operation_1=vector(mode="character",length=0)
       operation_2=vector(mode="character",length=0)
       operation_3=vector(mode="character",length=0)
       rep=vector(mode="integer",length=0)
       result1=vector(mode="integer",length=0)
       result2=vector(mode="integer",length=0)
+      # Iterative arithmetical operations
       for(s in 1:factorial(len)){
         for(i in 1:6){
           result1_temp=num_sign(B[[s]][1],B[[s]][2],i)
@@ -91,7 +94,7 @@ game24_makeCards=function(b=24){
       }
 
       if(length(result1) == 0){
-        return(print("You cannot make 24 with these cards."))
+        print("You cannot make 24 with these cards.")
       }
 
       for(q in 1:(length(result1)-1)){
