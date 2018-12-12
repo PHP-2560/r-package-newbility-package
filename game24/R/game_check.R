@@ -1,3 +1,6 @@
+library(combinat)
+library(stringr)
+
 ## This function has been used many times in this package, it is explained somewhere else
 num_sign=function(a,b,sign){
   if(sign==1){
