@@ -56,7 +56,7 @@ game24_makeCards=function(b=24){
   A = sample(1:13, 4, replace = TRUE)
   print(paste(c("Make 24 from these cards:", A), collapse = " "))
   len=length(A)
-  B=permn(A)
+  B=combinat::permn(A)
   flag = 0
   while(flag == 0){
     # Run 24 solver logic when user desires solutions

@@ -51,6 +51,7 @@ trans=function(b,c,a){
   }
 }
 
+# This function gives 5 random cards and prompts the user before giving the solutions to Krypto
 gameKrypto_makeCards=function(){
   A = sample(1:13, 4, replace = TRUE)
   print(paste(c("Make the objective card from these cards:", A), collapse = " "))
@@ -58,19 +59,22 @@ gameKrypto_makeCards=function(){
   print(paste("Your objective card is:", b))
   flag = 0
   while(flag == 0){
+    # Run Krypto solver logic when user desires solutions
     input <- readline(prompt = "Enter the objective card when you want solutions: ")
     if(as.numeric(input) == b){
       len=length(A)
-      B=permn(A)
+      B=combinat::permn(A)
       stopifnot(len==4)
       stopifnot(A[1]%%1==0 & A[2]%%1==0 & A[3]%%1==0 & A[4]%%1==0)
       method=vector(mode="character",length=0)
+      # Initializing required vectors
       operation_1=vector(mode="character",length=0)
       operation_2=vector(mode="character",length=0)
       operation_3=vector(mode="character",length=0)
       rep=vector(mode="integer",length=0)
       result1=vector(mode="integer",length=0)
       result2=vector(mode="integer",length=0)
+      # Iterative arithmetical operations
       for(s in 1:factorial(len)){
         for(i in 1:6){
           result1_temp=num_sign(B[[s]][1],B[[s]][2],i)
