@@ -1,7 +1,6 @@
 
 library(combinat)
 library(stringr)
-library(ggplot2)
 
 
 #calculating function
@@ -60,7 +59,7 @@ trans=function(b,c,a){
 #Main function
 game24_table=function(A,b=24){
   len=length(A)
-  B=permn(A)
+  B=combinat::permn(A)
   stopifnot(len==4)
   stopifnot(A[1]%%1==0 & A[2]%%1==0 & A[3]%%1==0 & A[4]%%1==0)
   method=vector(mode="character",length=0)
