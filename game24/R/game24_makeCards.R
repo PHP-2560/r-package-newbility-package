@@ -114,7 +114,7 @@ game24_makeCards=function(b=24){
       result2=result2[-rep]
 
       for(f in 1:length(operation_1)){
-        method=c(method,str_c(operation_1[f]," = ", result1[f], " then ",
+        method=c(method,stringr::str_c(operation_1[f]," = ", result1[f], " then ",
                               operation_2[f]," = ", result2[f], " then ",
                               operation_3[f],  " = 24"))
       }
