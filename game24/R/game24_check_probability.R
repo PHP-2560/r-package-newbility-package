@@ -3,7 +3,7 @@ library(combinat)
 library(stringr)
 
 
-#calculating function
+#give every operation a numeric value that will be used inside the function game24.
 num_sign=function(a,b,sign){
   if(sign==1){
     return(a+b)
