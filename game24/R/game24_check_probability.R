@@ -26,7 +26,7 @@ num_sign=function(a,b,sign){
 }
 
 
-#Print strings
+#function to show the steps of operations that will be used inside the function game24.
 trans=function(b,c,a){
   stopifnot(a==1 | a==2 | a==3 | a==4 | a==5 | a==6)
   if(a==1){
