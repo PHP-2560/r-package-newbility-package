@@ -1,6 +1,6 @@
 library(combinat)
 library(stringr)
-
+#give every operation a numeric value that will be used inside the function game24
 num_sign=function(a,b,sign){
   if(sign==1){
     return(a+b)
@@ -22,7 +22,7 @@ num_sign=function(a,b,sign){
   }
 }
 
-
+#function to show the steps of operations that will be used inside the function game24.
 trans=function(b,c,a){
   stopifnot(a==1 | a==2 | a==3 | a==4 | a==5 | a==6)
   if(a==1){
