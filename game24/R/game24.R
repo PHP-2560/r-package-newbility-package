@@ -6,7 +6,7 @@ library(stringr)
 
 
 
-#give every operation a numeric value that will be used inside the function game24.
+#This is a function to do the calculation: a and b are integers needed to be calculated, sign is the integer representing + - * /. 
 num_sign=function(a,b,sign){
   if(sign==1){
     return(a+b)
